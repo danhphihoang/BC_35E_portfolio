@@ -1,0 +1,76 @@
+/* GLOBAL */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Hind', sans-serif;
+}
+
+/* STYLE HEADER */
+header{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+}
+/* Trước HOVER */
+#portNavbar .nav-link::after{
+    content:'';
+    width: 0%;
+    height: 3px;
+    background-color: #35a22c;
+    display: block;
+    transition: all 0.5s;
+}
+/* Sau HOVER */
+#portNavbar .nav-link:hover::after{
+    width: 100%;
+}
+#portNavbar .active .nav-link::after{
+    width: 100%;
+}
+
+/* STYLE CAROUSEL */
+/* B1: Kích thước ảnh Avatar
+B2: Chình hình nền carousel (height)
+B3: chỉnh caption ở giữa carousel
+B4: Chỉnh hình dạng indicator */
+
+.portavatar{
+    border-radius: 50%;
+    width: 140px;
+}
+/* wh: (viewport width) thường dùng cho font, vùng nội dung chữ quan trọng cho người dùng thấy (logo, banner,..)
+VD: 
+wh: (viewport height) đơn vị sẽ theo theo kích thước của trình duyệt */
+#portcarouselID .carousel-item{
+    /* luôn có % bằng với khung trình duyệt không quan tâm cha con */
+    height: 100vh;
+}
+#portcarouselID .carousel-item>img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+/* Chỉnh caption ở giữa carousel cân giữa với thẻ position absoblute */
+#portcarouselID .carousel-caption{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* Chỉnh  vị trí indicator */
+#portcarouselID .carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+#portcarouselID .carousel-indicators li.active{
+    background-color: #35a22c;
+}
